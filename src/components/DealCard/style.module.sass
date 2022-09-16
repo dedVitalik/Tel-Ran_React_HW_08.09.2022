@@ -1,4 +1,39 @@
 .card
-    border: 2px solid black
-    padding: 10px
+    padding: 10px 60px 10px 10px
     margin: 10px
+    flex-basis: 25%
+    color: white
+    font-size: 2rem
+    position: relative
+
+.delete
+    position: absolute
+    top: 0
+    right: 0
+    height: 100%
+    width: 55px
+    cursor: pointer
+    &:before
+        content: " "
+        position: absolute
+        top: 0
+        right: 0
+        background-color: white
+        height: 5px
+        width: 40px
+        transform: translateX(18px) rotate(45deg) translateY(30px)
+    &:after
+        content: " "
+        position: absolute
+        top: 0
+        right: 0
+        background-color: white
+        height: 5px
+        width: 40px
+        transform: translateX(-24px) rotate(-45deg) translateY(30px)
+
+.red
+    background-color: red
+
+.green
+    background-color: #1ABC9C

@@ -5,7 +5,7 @@ import CardContainer from '../CardContainer';
 
 function App() {
 	const [deals, setDials] = useState([]);
-	const addNewDials = (descr, importance, day) => {
+	const addNewDeal = (descr, importance, day) => {
 		setDials([
 			...deals,
 			{
@@ -16,11 +16,19 @@ function App() {
 			},
 		]);
 	};
+	
+	const removeDeal = (id) => {
+		setDials(deals.filter((deal) => deal.id !== id));
+	}
+	
+	const removeDay = (day) => {
+		setDials(deals.filter((deal) => deal.day !== day));
+	}
 
 	return (
 		<div>
-			<DiaryForm addNewDials={addNewDials} />
-			<CardContainer deals={deals} />
+			<DiaryForm addNewDials={addNewDeal} />
+			<CardContainer deals={deals} removeDay={removeDay} removeDeal={removeDeal}/>
 		</div>
 	);
 }
