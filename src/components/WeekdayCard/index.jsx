@@ -1,10 +1,14 @@
 import React from 'react';
 import s from './style.module.sass';
 import DealCard from '../DealCard';
+import Close from '../UI/Close';
+import Context from '../../context';
 
-export default function WeekdayCard({label, deals, removeDeal, removeDay}) {
+export default function WeekdayCard({label, deals}) {
     
     const [showDelete, setShowDelete] = React.useState(false);
+    
+    const {removeDay} = React.useContext(Context);
     
     const mouseOverHandler = (evt) => {
         evt.preventDefault();
@@ -13,17 +17,18 @@ export default function WeekdayCard({label, deals, removeDeal, removeDay}) {
         }
     }
     
-    return (
-        <div className={s.container}
-             onMouseOver={mouseOverHandler}
-             onMouseOut={() => setShowDelete(false)}
+    return (<div className={s.container}
+                 onMouseOver={mouseOverHandler}
+                 onMouseOut={() => setShowDelete(false)}
         >
             <div className={s.label}>{label}</div>
             <div className={s.deals}>
                 {deals.map((deal) => (
                     <>
-                        <DealCard removeDeal={removeDeal} key={deal.id} {...deal} />
-                        {showDelete ? <div className={s.deleteday} onClick={() => removeDay(deal.day)}></div> : null}
+                        <DealCard key={deal.id} {...deal} />
+                        <div key={deal.id + 1000} className={s.close} onClick={() => removeDay(deal.day)}>
+                            <Close/>
+                        </div>
                     </>
                 ))}
             </div>

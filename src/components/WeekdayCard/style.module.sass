@@ -18,6 +18,9 @@
     display: flex
     flex-wrap: wrap
     position: relative
+    &:hover
+        & .close
+            display: block
 
 .deleteday
     position: absolute
@@ -28,3 +31,9 @@
     cursor: pointer
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' style='shape-rendering:geometricPrecision%3Btext-rendering:geometricPrecision%3Bimage-rendering:optimizeQuality%3Bfill-rule:evenodd%3Bclip-rule:evenodd' viewBox='0 0 500 500'%3E%3Cdefs%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='250' y1='452.6' x2='250' y2='190.5'%3E%3Cstop offset='0' style='stop-color:%23c82800'/%3E%3Cstop offset='1' style='stop-color:%23f30'/%3E%3C/linearGradient%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='250' y1='447.7' x2='250' y2='62.3'%3E%3Cstop offset='0' style='stop-color:%23921d00'/%3E%3Cstop offset='1' style='stop-color:%23f30'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='250' y1='73.7' x2='250' y2='211.3'%3E%3Cstop offset='0' style='stop-color:%23db2c00'/%3E%3Cstop offset='1' style='stop-color:%23ff6b46'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath style='fill:url(%23a)%3Bstroke:%23801a00%3Bstroke-width:5' d='M480 370 370 480 250 360 130 480 20 370l120-120L20 130 130 20l120 120L370 20l110 110-120 120z'/%3E%3Cpath style='fill:url(%23b)' d='m370 42 88 88-120 120H162L42 130l88-88 120 120z'/%3E%3Cpath d='m375 212-37 38 120 120-88 88-120-120-120 120-88-88 120-120-37-38c38-17 80-27 125-27s87 10 125 27z' style='fill:url(%23c)'/%3E%3C/svg%3E")
     background-repeat: no-repeat
+
+.close
+    position: absolute
+    top: -15px
+    right: -15px
+    display: none
